@@ -2,4 +2,4 @@
 
 Video Link
 
-https://iu.mediaspace.kaltura.com/media/t/1_m5ryv3p4
+https://iu.mediaspace.kaltura.com/media/t/1_e0ir2jnh
