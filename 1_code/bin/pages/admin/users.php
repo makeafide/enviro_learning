@@ -34,14 +34,19 @@
 
 
             <div class="span9">
-                <h1 class="page-title">Your Courses</h1>
+                <h1 class="page-title">Users</h1>
+                <div class="btn-toolbar">
+                    <button class="btn btn-primary"><i class="icon-plus"></i> New Course</button>
+                    <div class="btn-group">
+                    </div>
+                </div>
                 <br>
                 <div class="well">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Course ID</th>
-                                <th>Course Name</th>
+                                <th>Username</th>
+                                <th>Email</th>
                                 <th style="width: 26px;"></th>
                             </tr>
                         </thead>
@@ -49,18 +54,18 @@
 
                             <?php
 
-              require_once($_settings['system_base_path'].'bin/classes/courses/courses.php'); 
-                $courses = new coursesClass($_settings['db_host'],$_settings['db_name'],$_settings['db_username'],$_settings['db_password']);
-                if($courses->dbconnect()){
-                  foreach($courses->getUserCourses() as $value){
-                    echo '<tr onclick="openCourse(1)">
-                    <td>'.$value['course_code'].'</td>
-                    <td>'.$value['class_name'].'</td>
+              require_once($_settings['system_base_path'].'bin/classes/admin/users.php'); 
+                $users = new userAdminClass($_settings['db_host'],$_settings['db_name'],$_settings['db_username'],$_settings['db_password']);
+                if($users->dbconnect()){
+                  foreach($users->getUsers() as $value){
+                    echo '<tr onclick="">
+                    <td>'.$value['username'].'</td>
+                    <td>'.$value['email'].'</td>
                     <td>
-                      <!--
-                        <a href="user.html"><i class="icon-pencil"></i></a>
-                        <a href="# " role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                        -->
+                    
+                        <a href=""><i class="icon-pencil"></i></a>
+                        <a href="# " role="button"><i class="icon-remove"></i></a>
+                   
                     </td>
                   </tr>';
                   }

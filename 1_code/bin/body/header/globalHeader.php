@@ -9,5 +9,5 @@
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap-responsive.css">
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
+    <script src="lib/day/scripts/day.js?v=2022.4.438"></script>
     <script src="lib/jquery-1.8.1.min.js" type="text/javascript"></script>

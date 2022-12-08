@@ -6,8 +6,8 @@ require_once($_settings['system_base_path'].'bin/classes/db/mysql/mysql.php');
 
 class authClass extends mysqlDBClass {
 
-    // hands the login process as well as createing a new user token on success auth
-   public static function login($user,$pass){
+    // handels the login process as well as createing a new user token on success auth
+    function login($user,$pass){
         $results = $this->query("select * FROM vle_users where username = :username",['username' => $user]);
 
         if(count($results) > 0){
@@ -25,10 +25,12 @@ class authClass extends mysqlDBClass {
                 }
             }
             else{
+                echo "password Error";
                 return false;
             }
         }
         else{
+            echo "User Error";
             return false;
         }
 

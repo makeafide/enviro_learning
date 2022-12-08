@@ -9,8 +9,8 @@ if(isset($_GET['api'])){
     if($pageAuth->dbconnect()){
     if($pageAuth->logonVerify()){
             $pageLocation = explode('-',$_GET['api']);
-            if (file_exists('bin/pages/'.$pageLocation[0].'/'.$pageLocation[1].'.php')) {
-                require_once('bin/api/'.$pageLocation[0].'/'.$pageLocation[1].'.php');
+            if (file_exists($_settings['system_base_path'].'bin/api/'.$pageLocation[0].'/'.$pageLocation[1].'.php')) {
+                require_once($_settings['system_base_path'].'bin/api/'.$pageLocation[0].'/'.$pageLocation[1].'.php');
             }
         }
         else if($_GET['api'] == 'auth-auth'){

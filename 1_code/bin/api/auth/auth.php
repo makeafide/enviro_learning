@@ -24,11 +24,11 @@ function loginAction($_settings,$user,$password){
     if($loginAuth->login($user,$password)){
         print_r(json_encode((object) array('error' => false,'location'=>'?p=splash-home')));
     }else{
-        print_r(json_encode((object) array('error' => true,'location'=>'?p=auth-login')));
+        print_r(json_encode((object) array('error' => true,'message'=> 'Auth Error','location'=>'?p=auth-login')));
     }
     }
     else{
-        print_r(json_encode((object) array('error' => true,'location'=>'?p=auth-login')));
+        print_r(json_encode((object) array('error' => true,'message'=> 'Database Error','location'=>'?p=auth-login')));
     }
 }
 
@@ -36,7 +36,7 @@ function loginAction($_settings,$user,$password){
 function logoutAction($_settings){
     require_once($_settings['system_base_path'].'bin/classes/auth/auth.php');
     $loginAuth = new authClass($_settings['db_host'],$_settings['db_name'],$_settings['db_username'],$_settings['db_password']);
-
+    echo 'Hello World';
     if($loginAuth->dbconnect()){
     if($loginAuth->logout()){
         print_r(json_encode((object) array('error' => false,'location'=>'?p=auth-login')));

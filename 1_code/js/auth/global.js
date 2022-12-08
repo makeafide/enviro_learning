@@ -31,8 +31,8 @@ function login(){
         event.preventDefault();
         alert("trest");
         // submit event detected
-        var user = document.getElementById('username');
-        var pass = document.getElementById('password');
+        var user = document.getElementById('username').value;
+        var pass = document.getElementById('password').value;
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '?api=auth-auth&action=login', true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

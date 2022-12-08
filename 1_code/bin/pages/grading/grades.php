@@ -34,7 +34,7 @@
 
 
             <div class="span9">
-                <h1 class="page-title">Your Courses</h1>
+                <h1 class="page-title">Your Grades</h1>
                 <br>
                 <div class="well">
                     <table class="table table-hover">
@@ -53,13 +53,13 @@
                 $courses = new coursesClass($_settings['db_host'],$_settings['db_name'],$_settings['db_username'],$_settings['db_password']);
                 if($courses->dbconnect()){
                   foreach($courses->getUserCourses() as $value){
-                    echo '<tr onclick="openCourse(1)">
+                    echo '<tr onclick="openGradeDetails('.$value['course_id'].')">
                     <td>'.$value['course_code'].'</td>
                     <td>'.$value['class_name'].'</td>
                     <td>
                       <!--
-                        <a href="user.html"><i class="icon-pencil"></i></a>
-                        <a href="# " role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                        <a href=""><i class="icon-pencil"></i></a>
+                        <a href="# " role="button"><i class="icon-remove"></i></a>
                         -->
                     </td>
                   </tr>';
