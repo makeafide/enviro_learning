@@ -7,6 +7,6 @@ $_settings['system_base_path'] = '/var/www/html/';
 $_settings['db_host'] = 'localhost';
 $_settings['db_name'] = 'vle';
 $_settings['db_username'] = 'admin';
-$_settings['db_password'] = 'Will2789$';
+$_settings['db_password'] = '123234123';
 
 ?>
